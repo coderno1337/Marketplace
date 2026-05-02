@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Marketplace</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-secondary mb-5">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4 text-primary" href="index.html">
+        <i class="bi bi-disc-fill me-2"></i>Marketplace
+      </a>
+      <a class="btn btn-outline-secondary btn-sm" href="details.html">Back to Shop</a>
+    </div>
+  </nav>
+
+  <div class="container mb-5">
+    <div class="row g-5">
+      <!-- Checkout Form -->
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-4 fw-bold">Billing Address</h4>
+        <form>
+          <div class="row g-3">
+            <div class="col-sm-6 form-group">
+              <label for="firstName" class="form-label text-secondary">First name</label>
+              <input type="text" class="form-control" id="firstName" required>
+            </div>
+
+            <div class="col-sm-6 form-group">
+              <label for="lastName" class="form-label text-secondary">Last name</label>
+              <input type="text" class="form-control" id="lastName" required>
+            </div>
+
+            <div class="col-12 form-group">
+              <label for="email" class="form-label text-secondary">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="col-12 form-group">
+              <label for="address" class="form-label text-secondary">Address</label>
+              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+            </div>
+
+            <div class="col-md-5 form-group">
+              <label for="country" class="form-label text-secondary">Country</label>
+              <select class="form-select" id="country" required>
+                <option value="">Choose...</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Canada</option>
+              </select>
+            </div>
+
+            <div class="col-md-4 form-group">
+              <label for="state" class="form-label text-secondary">State/Region</label>
+              <select class="form-select" id="state" required>
+                <option value="">Choose...</option>
+                <option>California</option>
+                <option>New York</option>
+                <option>London</option>
+              </select>
+            </div>
+
+            <div class="col-md-3 form-group">
+              <label for="zip" class="form-label text-secondary">Zip</label>
+              <input type="text" class="form-control" id="zip" required>
+            </div>
+          </div>
+
+          <hr class="my-4 border-secondary">
+
+          <h4 class="mb-4 fw-bold">Payment</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+              <label class="form-check-label text-light" for="credit">Credit card</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label text-light" for="paypal">PayPal</label>
+            </div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6 form-group">
+              <label for="cc-name" class="form-label text-secondary">Name on card</label>
+              <input type="text" class="form-control" id="cc-name" required>
+              <small class="text-muted">Full name as displayed on card</small>
+            </div>
+
+            <div class="col-md-6 form-group">
+              <label for="cc-number" class="form-label text-secondary">Credit card number</label>
+              <input type="text" class="form-control" id="cc-number" required>
+            </div>
+
+            <div class="col-md-3 form-group">
+              <label for="cc-expiration" class="form-label text-secondary">Expiration</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="MM/YY" required>
+            </div>
+
+            <div class="col-md-3 form-group">
+              <label for="cc-cvv" class="form-label text-secondary">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" required>
+            </div>
+          </div>
+
+          <hr class="my-4 border-secondary">
+
+          <button class="w-100 btn btn-primary btn-lg" type="button" onclick="alert('Order placed successfully!')">Place Order</button>
+        </form>
+      </div>
+
+      <!-- Cart Summary -->
+      <div class="col-md-5 col-lg-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-4">
+          <span class="text-light fw-bold">Your cart</span>
+          <span class="badge bg-primary rounded-pill">2</span>
+        </h4>
+        <ul class="list-group mb-3 border-secondary">
+          <li class="list-group-item bg-dark border-secondary d-flex justify-content-between align-items-center lh-sm">
+            <h6 class="my-0 text-light">Limited Edition Vinyl Record</h6>
+            <span class="text-light">$80.00</span>
+          </li>
+          <li class="list-group-item bg-dark border-secondary d-flex justify-content-between align-items-center lh-sm">
+            <h6 class="my-0 text-light">Vintage Artist Tour T-Shirt</h6>
+            <span class="text-light">$45.00</span>
+          </li>
+          <li class="list-group-item bg-dark border-secondary d-flex justify-content-between">
+            <span class="text-light fw-bold">Total (USD)</span>
+            <strong class="text-primary fs-5">$125.00</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
